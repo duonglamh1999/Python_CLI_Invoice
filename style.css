@@ -1,0 +1,45 @@
+
+            @page{
+            size : a4 portrait;
+            }
+
+            * {
+                    border: 0;
+                    box-sizing: content-box;
+                    color: inherit;
+                    font-family: inherit;
+                    font-size: inherit;
+                    font-style: inherit;
+                    font-weight: inherit;
+                    line-height: inherit;
+                    list-style: none;
+                    margin: 0;
+                    padding: 0;
+                    text-decoration: none;
+                    vertical-align: top;
+                }
+            html { font: 16px/1 'Open Sans', sans-serif; overflow: auto; padding: 0.5in; }
+            h1 {
+                font: bold 25px sans-serif;
+                letter-spacing: 0.5em;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            header h1 {
+                background: #000;
+                border-radius: 0.25em;
+                color: #FFF;
+                margin: 0 0 1em;
+                padding: 0.5em 0;
+                display: flex;
+            }
+            header address {
+                float: left;
+                font-size: 15px;
+                font-style: normal;
+                line-height: 1.25;
+                margin: 0 1em 1em 0;
+            }
+            header address p { margin: 0 0 0.25em; }
+            header:after { clear: both; content: ""; display: table; }

@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>{% if pdf_title %}{{ pdf_title }}{% else %}PDF{% endif %}</title>
+
+    </head>
+    <body>
+        <header>
+			<h1>Invoice</h1>
+			<address>
+				<p>{{data.sender_name}}</p>
+				<p>{{data.sender_address}}</p>
+				<p>{{data.sender_phone}}</p>
+			</address>
+            <address>
+                <h2>Bill to:</h2>
+				<p>{{data.customer_name}}</p>
+                <p>Invoice Number:{{data.invoice_number}}</p>
+                <p>Amount:{{data.invoice_amount}}</p>
+				<p>Invoice Date:{{data.invoice_date}}</p>
+                <p>Due Date:{{data.due_date}}</p>
+            </address>
+        </header>
+        <table>
+          <tr>
+              <th>Date</th>
+              <th>Task</th>
+              <th>Hour</th>
+              <th>Rate</th>
+              <th>Total</th>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+        </table>
+    </div>
+    </body>
+</html>
