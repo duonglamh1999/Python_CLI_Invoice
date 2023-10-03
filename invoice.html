@@ -6,6 +6,7 @@
     <body>
         <header>
 			<h1>Invoice</h1>
+          <div class = "header">
 			<address>
 				<p>{{data.sender_name}}</p>
 				<p>{{data.sender_address}}</p>
@@ -14,30 +15,41 @@
             <address>
                 <h2>Bill to:</h2>
 				<p>{{data.customer_name}}</p>
-                <p>Invoice Number:{{data.invoice_number}}</p>
-                <p>Amount:{{data.invoice_amount}}</p>
-				<p>Invoice Date:{{data.invoice_date}}</p>
-                <p>Due Date:{{data.due_date}}</p>
+                <p>Invoice Number: {{data.invoice_number}}</p>
+                <p>Amount: {{data.invoice_amount}}$</p>
+				<p>Invoice Date: {{data.invoice_date}}</p>
+                <p>Due Date: {{data.due_date}}</p>
             </address>
+            </div>
         </header>
-        <table>
+        <table >
+          <thead>
           <tr>
-              <th>Date</th>
-              <th>Task</th>
-              <th>Hour</th>
-              <th>Rate</th>
-              <th>Total</th>
+              <th class= "date">Date</th>
+              <th class= "task"> Task</th>
+              <th class= "small">Hour</th>
+              <th class= "small">Rate</th>
+              <th class= "small">Total</th>
           </tr>
+            </thead>
+          <tbody>
+          {%for row in data.df %}
           <tr>
-            <td>Alfreds Futterkiste</td>
-            <td>Maria Anders</td>
-            <td>Germany</td>
+              <td class= "date">{{row.Date}}</td>
+              <td class= "task">{{row.Tasks}}</td>
+              <td class= "small">{{row.Hours}}</td>
+              <td class= "small">{{row.Rate}}</td>
+              <td class= "small">{{row.Total}}</td>
           </tr>
-          <tr>
-            <td>Centro comercial Moctezuma</td>
-            <td>Francisco Chang</td>
-            <td>Mexico</td>
-          </tr>
+          {% endfor %}
+            <thead >
+              <td class= "date">{{""}}</td>
+              <td class= "task">{{""}}</td>
+              <td class= "small">{{""}}</td>
+              <td class= "small">Total</td>
+              <td class= "small">{{data.invoice_amount}}$</td>
+          </thead>
+            </tbody>
         </table>
     </div>
     </body>

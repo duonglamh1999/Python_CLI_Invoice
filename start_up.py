@@ -28,7 +28,7 @@ def match_mode(year, month):
             mode = input()
             match mode.lower():
                 case "l":
-                    log.log(year, month)
+                    log.log(year, month,file_path)
                 case 'e':
                     is_running = False
                 case _:
