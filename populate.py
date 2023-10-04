@@ -43,9 +43,8 @@ def populate(year: int, month: int):
     template_env = jinja2.Environment(loader=template_loader)
     template = template_env.get_template(TEMPLATE_FILE)
     context = get_context(year, month)
-
     html = template.render(data=context)
     css = 'style.css'
-    out_path = f'C:\\Users\\David\\Desktop\\{context["invoice_number"]}_invoice.pdf'
+    out_path = f'{util.read_config("out_path")}{context["invoice_number"]}_invoice.pdf'
     pdfkit.from_string(html, configuration=config,output_path=out_path, css = css)
 
